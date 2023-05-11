@@ -1,0 +1,150 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Gilroy",sans-serif;
+    text-decoration: none;
+  }
+  @font-face {
+    font-family: 'Gilroy';
+    src: url(/fonts/Gilroy.woff2);
+  }
+  @font-face {
+    font-family: 'Gilroy';
+    src: url(/fonts/Gilroy-Medium.woff2);
+  }
+  @font-face {
+    font-family: 'Gilroy';
+    src: url(/fonts/Gilroy-Semibold.woff2);
+  }
+
+  body {
+    font-family: "Gilroy", sans-serif;
+  }
+/*--- section product ---*/
+.product-ip {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Gilroy', sans-serif;
+  padding: 50px 0;
+  cursor: unset;
+}
+.product-ip h2{
+  font-size: 2rem;
+  /* font-weight: 300; */
+  margin-bottom: 20px;
+}
+.container {
+  width: 1070px;
+  display: flex;
+  align-items: center;
+  font-family: "Gilroy", sans-serif;
+  flex-direction: column;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 50px;
+}
+.grid-product {
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  font-family: "Gilroy", sans-serif;
+
+  justify-content: center;
+  align-items: center;
+  transition: .5s;
+  border-radius: 10px;
+  box-shadow: 0 0 2px #3d3d3d;
+  cursor: default;
+}
+
+.grid-product img {
+  transition: .3s;
+  width: 300px;
+}
+
+.grid-product img:hover{
+  transform: translateY(-20px);
+  transition: .3s;
+}
+
+.grid-detail {
+  margin: 20px 0;
+  font-family: "Gilroy", sans-serif;
+  text-align: center;
+  color: #c20000;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.product-text {
+  font-weight: bold;
+  font-family: "Gilroy", sans-serif;
+  font-size: 23px;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -20px;
+    margin-bottom: 7px;
+  }
+  
+  .action button {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-family: "Gilroy", sans-serif;
+    font-size: 15px;
+    /* font-weight: bold; */
+    background:  #3d3d3d;
+    color: #fff;
+    transition: .3s;
+    cursor: pointer;
+  }
+  .action button:hover{
+    background-color: #3d3d3d;
+    color: #fff;
+    /* box-shadow: 0 0 0 5px #3b83f65f; */
+    transform: scale(0.95);
+    transition: .3s;
+  }
+  /*-------*/
+  .grid-full {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  .grid-product-full {
+    background: #f1f1f1;
+    grid-column: span 3;
+    display: flex;
+    position: relative;
+  }
+
+  .ip-img {
+    padding: 10px 10px;
+  }
+
+  .chi-tiet-sp>button{
+    background-color: #f1f1f1;
+    font-size: 19px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-family: "Gilroy", sans-serif;
+  }
+  .chi-tiet-sp>button:hover{
+    text-decoration: underline;
+  }
+
+
+

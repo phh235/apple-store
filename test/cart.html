@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+  <title>Giỏ hàng</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <head>
+    <style>
+      @font-face {
+        font-family: "Gilroy";
+        src: url(fonts/Gilroy.woff2);
+      }
+      @font-face {
+        font-family: "Gilroy";
+        src: url(fonts/Gilroy-Medium.woff2);
+      }
+      @font-face {
+        font-family: "Gilroy";
+        src: url(fonts/Gilroy-Semibold.woff2);
+      }
+      .cart {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-family: "Gilroy", sans-serif;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid #555;
+        font-size: 20px;
+        width: 15%;
+        text-align: center;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        border-top: 1px solid #555;
+        line-height: 50px;
+      }
+      img {
+        width: 100%;
+      }
+
+      input[type="number"] {
+        width: 50px;
+        padding: 5px;
+        font-size: 15px;
+        text-align: center;
+      }
+
+      .cart-summary {
+        /* display: flex; */
+        /* justify-content: space-between; */
+        /* align-items: center; */
+        text-align: right;
+        border-top: 1px solid #555;
+        padding-top: 20px;
+      }
+
+      p {
+        text-align: right;
+        font-weight: 600;
+      }
+
+      .cart-summary span {
+        color: #e91e63;
+      }
+
+      button {
+        background-color: #3d3d3d;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: "Gilroy", sans-serif;
+        transition: 0.3s;
+      }
+      button:hover {
+        transform: scale(0.95);
+        transition: 0.3s;
+        background-color: #3d3d3d;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="font-size: 50px; cursor: pointer;" onclick="history.back()"><i class="ri-arrow-left-line"></i></div>
+    <div class="cart">
+      <table>
+        <thead>
+          <tr>
+            <th>Ảnh sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+            <th>Xóa sản phẩm</th>
+          </tr>
+        </thead>
+        <tbody id="product">
+          <tr>
+            <td><img src="image/ip14prm.png" alt="Sản phẩm 1" /></td>
+            <td>iPhone 14 Pro Max</td>
+            <td data-gia="31590000">31.590.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img src="image/ip14prm.png" alt="Sản phẩm 2" />
+            </td>
+            <td>iPhone 14 Pro</td>
+            <td data-gia="27850000">27.850.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img src="image/515Wx515H-DGAP17563000.png" alt="Sản phẩm 3" />
+            </td>
+            <td>iPhone 14 Plus</td>
+            <td data-gia="25280000">25.280.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img src="image/515Wx515H-DGAP17563000.png" alt="Sản phẩm 3" />
+            </td>
+            <td>iPhone 14</td>
+            <td data-gia="23990000">23.990.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="image/iphone-13-pro-max-128gb-chinh-hang-vna- 2.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>iPhone 13 Pro Max</td>
+            <td data-gia="24600000">24.600.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="image/iphone-13-pro-max-128gb-chinh-hang-vna- 2.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>iPhone 13 Pro</td>
+            <td data-gia="21400000">21.400.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="image/iphone-13-mini-blue-select-2021_1632214975.png.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>iPhone 13</td>
+            <td data-gia="18990000">18.990.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="image/iphone-13-mini-blue-select-2021_1632214975.png.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>iPhone 13 Mini</td>
+            <td data-gia="13590000">13.590.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-segment?wid=800&hei=600&fmt=png-alpha&qlt=80&.v=1573580916082"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>MacBook Air M1</td>
+            <td data-gia="21990000">21.990.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-segment?wid=800&hei=600&fmt=png-alpha&qlt=80&.v=1573580916082"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>MacBook Pro</td>
+            <td data-gia="224990000">24.990.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/imac-segment?wid=800&hei=600&fmt=png-alpha&qlt=80&.v=1570232081431"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>iMac</td>
+            <td data-gia="21990000">21.990.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/imac-pro-segment?wid=800&hei=600&fmt=png-alpha&qlt=80&.v=1570231926191"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>iMac Pro</td>
+            <td data-gia="26990000">26.990.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mac-pro-segment?wid=800&hei=600&fmt=png-alpha&qlt=80&.v=1524766968633"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>Mac Pro</td>
+            <td data-gia="29990000">29.990.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mac-mini-segment?wid=800&hei=600&fmt=png-alpha&qlt=80&.v=1539466285370"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>Mac Mini</td>
+            <td data-gia="17990000">17.990.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/imac-pro-segment?wid=800&hei=600&fmt=png-alpha&qlt=80&.v=1570231926191"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>Mac Pro Edition</td>
+            <td data-gia="31990000">31.990.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/imac-pro-segment?wid=800&hei=600&fmt=png-alpha&qlt=80&.v=1570231926191"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>Mac Pro Limited</td>
+            <td data-gia="32990000">32.990.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                style="width: 70%; margin: 20px 0"
+                src="image/ipad-pro-m1-2020-129-oneway-1_1655525833.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>iPad Pro</td>
+            <td data-gia="26590000">26.590.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                style="width: 70%; margin: 20px 0"
+                src="image/ipad-pro-m1-2020-129-oneway_1655525885.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>iPad Pro M1</td>
+            <td data-gia="27850000">27.850.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img style="width: 70%; margin: 20px 0"
+              src="image/ipad-pro-12-9-2021-1_1_1.png"" alt="Sản phẩm 3" />
+            </td>
+            <td>iPad Pro 12.9 Inch</td>
+            <td data-gia="25280000">25.280.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                style="width: 60%; margin: 20px 0"
+                src="image/mauxam_2_e60dfdb7208444fd81b81d7ef1ad441c.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>iPad Pro</td>
+            <td data-gia="23990000">23.990.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                style="width: 60%; margin: 20px 0"
+                src="image/air-grey.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>iPad Air (Grey)</td>
+            <td data-gia="15600000">15.600.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                style="width: 70%; margin: 20px 0"
+                src="image/air-pink.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>iPad Air (Pink)</td>
+            <td data-gia="15400000">15.400.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                style="width: 70%; margin: 20px 0"
+                src="image/air-gold.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>iPad Air (Gold)</td>
+            <td data-gia="15990000">15.990.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                style="width: 60%; margin: 20px 0"
+                src="image/air-grey.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>iPad Air</td>
+            <td data-gia="10590000">10.590.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                style="width: 70%; margin: 20px 0"
+                src="image/MQDY3ref_VW_34FR_watch-49-titanium-ultra_VW_34FR_WF_CO_watch-face-49-alpine-ultra_VW_34FR_WF_CO_GEO_ 1.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>Apple Watch Ultra 49mm (Orange)</td>
+            <td data-gia="10790000">10.790.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                style="width: 70%; margin: 20px 0"
+                src="image/MQE23ref_VW_34FR_watch-49-titanium-ultra_VW_34FR_WF_CO_watch-face-49-alpine-ultra_VW_34FR_WF_CO_GEO_.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>Apple Watch Ultra 49mm (Gray)</td>
+            <td data-gia="10790000">10.790.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+            <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                style="width: 70%; margin: 20px 0"
+                src="image/MQE53ref_VW_34FR_watch-49-titanium-ultra_VW_34FR_WF_CO_watch-face-49-alpine-ultra_VW_34FR_WF_CO_GEO_-removebg-preview 1.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>Apple Watch Ultra 49mm (Milk)</td>
+            <td data-gia="10790000">10.790.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+                        <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                style="width: 70%; margin: 20px 0"
+                src="image/MPLT3ref_VW_34FRwatch-45-alum-midnight-nc-8s_VW_34FR_WF_CO.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>Apple Watch Series 8 (Black)</td>
+            <td data-gia="10790000">10.790.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+                        <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                style="width: 70%; margin: 20px 0"
+                src="image/1429_mp7f3ref_vw_34fr_watch_45_alum_silver_cell_8s_vw_34fr_wf_co.png"
+                alt="Sản phẩm 3"
+              />
+            </td>
+            <td>Apple Watch Series 8 (White)</td>
+            <td data-gia="10790000">10.790.000 đ</td>
+            <td><input type="number" onchange="tinh_tt(this)" /></td>
+                        <td></td>
+            <td><button onclick="xoa(this)">Xóa</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 30px; color: #c20000">
+        Tổng tiền: <span id="tong"></span>
+      </p>
+      <div class="cart-summary">
+        <a href="../muahang.html" target="_self"><button>Thanh toán</button></a>
+      </div>
+    </div>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

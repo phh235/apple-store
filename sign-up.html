@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="css/sign-up.css" />
+    <link rel="icon" href="image/login-box-line.png" />
+    <link rel="icon" href="image/apple-fill.png" />
+
+    <title>Đăng ký</title>
+    <style>
+      .valid {
+        color: green;
+      }
+
+      .invalid {
+        color: #c20000;
+      }
+      span {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        font-size: 50px;
+        position: absolute;
+        margin-top: 20px;
+        cursor: pointer;
+        color: #d9d9d9;
+      "
+      onclick="history.back()"
+    >
+      <i class="ri-arrow-left-line"
+        ><p
+          style="
+            font-size: 25px;
+            margin-top: -55px;
+            margin-left: 50px;
+            color: #d9d9d9;
+          "
+        >
+          Quay lại đăng nhập
+        </p></i
+      >
+    </div>
+    <div class="container">
+      <div class="login__content">
+        <!-- <img src="image/bg-login.png" alt="" class="login__img"> -->
+
+        <form action="/after-login.html" class="login__form" id="login-form">
+          <div>
+            <h1 class="login__title">Bạn chưa có tài khoản</h1>
+            <p class="login__description">Đăng ký ngay</p>
+          </div>
+
+          <div>
+            <div class="login__inputs">
+              <div>
+                <label for="" class="login_label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Điền email của bạn vào đây"
+                  required
+                  class="login__input"
+                />
+                <span id="email-validation-message"></span>
+              </div>
+              <div>
+                <label for="" class="login_label">SDT</label>
+                <input
+                  id="tel"
+                  type="tel"
+                  placeholder="Điền SDT của bạn vào đây"
+                  required
+                  class="login__input"
+                />
+                <span id="tel-validation-message"></span>
+              </div>
+
+              <div>
+                <label for="" class="login_label">Mật khẩu</label>
+
+                <div class="login__box">
+                  <input
+                    id="password"
+                    type="password"
+                    placeholder="Điền mật khẩu của bạn vào đây"
+                    required
+                    class="login__input"
+                    id="input-pass"
+                  />
+                  <span id="password-validation-message"></span>
+                </div>
+              </div>
+              <div>
+                <label for="" class="login_label">Nhập lại mật khẩu</label>
+                <div class="login__box">
+                  <input
+                    id="repeat"
+                    type="password"
+                    placeholder="Xác nhận mật khẩu"
+                    required
+                    class="login__input"
+                    id="input-pass"
+                  />
+                  <span id="repeat-validation-message"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="login__buttons">
+              <a href="#"><button class="login__button">Đăng ký</button></a>
+              <!-- <a href="#" class="login__forgot">Đã có tài khoản?</a>
+              <a href="#" class="login__forgot">Quay lại đăng nhập</a> -->
+              <!-- <a href="index.html"
+                ><button style="margin-top: 10px" class="login__buttons">
+                  Đăng nhập
+                </button></a
+                > -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      const emailInput = document.getElementById("email");
+      const validationMessage = document.getElementById(
+        "email-validation-message"
+      );
+
+      emailInput.addEventListener("input", function () {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (regex.test(emailInput.value)) {
+          validationMessage.innerHTML = "Email hợp lệ!";
+          validationMessage.classList.remove("invalid");
+          validationMessage.classList.add("valid");
+        } else {
+          validationMessage.innerHTML = "Email không hợp lệ!";
+          validationMessage.classList.remove("valid");
+          validationMessage.classList.add("invalid");
+        }
+      });
+
+      const telInput = document.getElementById("tel");
+      const validationTel = document.getElementById("tel-validation-message");
+      // tel number validation
+      telInput.addEventListener("input", function () {
+        const regex =
+          /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+        if (regex.test(telInput.value)) {
+          validationTel.innerHTML = "Số điện thoại hợp lệ!";
+          validationTel.classList.remove("invalid");
+          validationTel.classList.add("valid");
+        } else {
+          validationTel.innerHTML = "Số điện thoại không hợp lệ!";
+          validationTel.classList.remove("valid");
+          validationTel.classList.add("invalid");
+        }
+      });
+      // password
+      const passwordInput = document.getElementById("password");
+      const validationPass = document.getElementById(
+        "password-validation-message"
+      );
+
+      passwordInput.addEventListener("input", function () {
+        const regex = /^(?=.*[A-Z])(?=.*[@#%])(?=.{6,})/;
+        if (regex.test(passwordInput.value)) {
+          validationPass.innerHTML = "Mật khẩu hợp lệ!";
+          validationPass.classList.remove("invalid");
+          validationPass.classList.add("valid");
+        } else {
+          validationPass.innerHTML = "Mật khẩu không hợp lệ!";
+          validationPass.classList.remove("valid");
+          validationPass.classList.add("invalid");
+        }
+      });
+      //repeat password
+      const passwordRepeat = document.getElementById("repeat");
+      const validationRepeat = document.getElementById(
+        "repeat-validation-message"
+      );
+
+      passwordRepeat.addEventListener("input", function () {
+        const regex = /^(?=.*[A-Z])(?=.*[@#%])(?=.{6,})/;
+        if (regex.test(passwordRepeat.value)) {
+          validationRepeat.innerHTML = "Mật khẩu hợp lệ!";
+          validationRepeat.classList.remove("invalid");
+          validationRepeat.classList.add("valid");
+        } else {
+          validationRepeat.innerHTML = "Mật khẩu không hợp lệ!";
+          validationRepeat.classList.remove("valid");
+          validationRepeat.classList.add("invalid");
+        }
+      });
+    </script>
+  </body>
+</html>

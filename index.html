@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- <link rel="icon" href="image/login-box-line.png"> -->
+    <link rel="icon" href="image/apple-fill.png">
+    <style>
+        .valid {
+        color: green;
+      }
+
+      .invalid {
+        color: #c20000;
+      }
+      span {
+        font-size: 18px;
+      }
+    </style>
+
+    <title>Đăng nhập</title>
+    <script>
+        // Tạo biến cho phần tử loading
+        var loading = document.getElementById("loading");
+        // Chờ 4 giây
+        setTimeout(function () {
+            // Ẩn phần loading
+            document.getElementById("loading").style.display = "none";
+        }, 2200);
+        // Hiển thị phần tử loading khi trang web đang tải
+        window.addEventListener("load", function () {
+            loading.style.display = "none";
+        });
+
+        // Hiển thị phần tử loading khi gửi yêu cầu Ajax
+        xhr.addEventListener("loadstart", function () {
+            loading.style.display = "flex";
+        });
+
+        // Ẩn phần tử loading khi nhận được phản hồi Ajax
+        xhr.addEventListener("loadend", function () {
+            loading.style.display = "none";
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <div id="loading"> -->
+        <!-- <div class="spinner"></div> -->
+    </div>
+    <div class="container">
+        <div class="login__content">
+            <!-- <img src="image/iPhone 14 Pro Mockup 8.png" alt="" class="login__img"> -->
+            <form action="/after-login.html" class="login__form" id="login-form">
+                <div>
+                    <h1 class="login__title">
+                        Chào mừng quay trở lại
+                    </h1>
+                    <p class="login__description">
+                        Bạn phải đăng nhập để tiếp tục
+                    </p>
+                </div>
+
+                <div>
+                    <div class="login__inputs">
+                        <div>
+                            <label for="" class="login_label">Email</label>
+                            <input type="email" id="email" placeholder="abc@gmail.com" required class="login__input">
+                            <span id="email-validation-message"></span>
+                        </div>
+
+                        <div>
+                            <label for="" class="login_label">Mật khẩu</label>
+
+                            <div class="login__box">
+                                <input type="password" id="password" placeholder="Mật khẩu" required
+                                    class="login__input" id="input-pass">
+                                <span id="password-validation-message"></span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="login__check">
+                        <input type="checkbox"> Nhớ mật khẩu
+                    </div>
+                </div>
+
+                <div>
+                    <div class="login__buttons">
+                        <input style="border: 3px solid #3d3d3d;" type="submit" class="login__button"
+                            value="Đăng nhập"></input>
+                        <a href="sign-up.html" class="login__buttonss login__button-ghost">Đăng ký</a>
+                    </div>
+                    <a href="#" class="login__forgot">Quên mật khẩu?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/validate-login.js"></script>
+    <script>
+    const emailInput = document.getElementById("email");
+      const validationMessage = document.getElementById(
+        "email-validation-message"
+      );
+
+      emailInput.addEventListener("input", function () {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (regex.test(emailInput.value)) {
+          validationMessage.innerHTML = "Email hợp lệ!";
+          validationMessage.classList.remove("invalid");
+          validationMessage.classList.add("valid");
+        } else {
+          validationMessage.innerHTML = "Email không hợp lệ!";
+          validationMessage.classList.remove("valid");
+          validationMessage.classList.add("invalid");
+        }
+      });
+
+      const passwordInput = document.getElementById("password");
+      const validationPass = document.getElementById(
+        "password-validation-message"
+      );
+
+      passwordInput.addEventListener("input", function () {
+        const regex = /^(?=.*[A-Z])(?=.*[@#%])(?=.{6,})/;
+        if (regex.test(passwordInput.value)) {
+          validationPass.innerHTML = "Mật khẩu hợp lệ!";
+          validationPass.classList.remove("invalid");
+          validationPass.classList.add("valid");
+        } else {
+          validationPass.innerHTML = "Mật khẩu không hợp lệ!";
+          validationPass.classList.remove("valid");
+          validationPass.classList.add("invalid");
+        }
+      });
+    </script>
+</body>
+
+</html>

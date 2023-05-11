@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Apple iPhone 14 Pro Max 128GB</title>
+    <link rel="icon" href="image/apple-fill.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .container {
+        /* padding-top: 100px; */
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        font-family: "Gilroy", sans-serif;
+      }
+      @font-face {
+        font-family: "Gilroy";
+        src: url(/fonts/Gilroy.woff2);
+      }
+      @font-face {
+        font-family: "Gilroy";
+        src: url(/fonts/Gilroy-Medium.woff2);
+      }
+      @font-face {
+        font-family: "Gilroy";
+        src: url(/fonts/Gilroy-Semibold.woff2);
+      }
+      .product-images {
+        flex: 1 1 50%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 30px;
+        text-decoration: none;
+      }
+
+      .main-image {
+        width: 100%;
+        padding-bottom: 100%;
+        position: relative;
+        border: 4px solid #d9d9d9;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .main-image img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .sub-images {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .sub-images img {
+        width: 33.33%;
+        box-sizing: border-box;
+        border: 4px solid #d9d9d9;
+        transition: 0.5s;
+      }
+      .sub-images img:hover {
+        opacity: 0.7;
+        transition: 0.5s;
+      }
+
+      .product-details {
+        flex: 1 1 50%;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        font-size: 37px;
+        margin: 60px 0 60px;
+      }
+
+      .price {
+        margin-bottom: 40px;
+      }
+
+      .new-price {
+        font-size: 36px;
+        font-weight: bold;
+        color: #c20000;
+        margin-right: 10px;
+      }
+
+      .old-price {
+        font-size: 20px;
+        text-decoration: line-through;
+        color: #a1a1a1;
+        margin-right: 10px;
+      }
+
+      .discount {
+        color: #f57224;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .product-description {
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+
+      .add-to-cart {
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #3d3d3d;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 10px;
+        font-family: "Gilroy", sans-serif;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+
+      button:hover {
+        transform: scale(0.95);
+        background-color: #3d3d3d;
+        transition: 0.5s;
+      }
+
+      .product-rate {
+        margin: 10px 0;
+        color: #3d3d3d;
+        margin-top: -55px;
+        margin-bottom: 30px;
+        font-size: 20px;
+      }
+
+      .product-rate i {
+        font-size: 20px;
+        color: #ffd154;
+        margin-right: 5px;
+      }
+    </style>
+    <script>
+      function show(imageSrc) {
+        document.getElementById("main-image").src = imageSrc;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div
+      style="
+        font-size: 50px;
+        position: absolute;
+        margin-top: 20px;
+        cursor: pointer;
+      "
+      onclick="history.back()"
+    >
+      <i class="ri-arrow-left-line"></i>
+    </div>
+    <div class="container">
+      <div class="product-images">
+        <div class="main-image">
+          <img
+            id="main-image"
+            src="image/ip14prm.png"
+            alt="iPhone 14 Pro Max"
+          />
+        </div>
+        <div class="sub-images">
+          <img
+            onclick="show('image/den.png')"
+            style="height: 200px; border-bottom-left-radius: 15px"
+            src="image/den.png"
+          />
+          <img
+            onclick="show('image/trang.png')"
+            style="height: 200px"
+            src="image/trang.png"
+          />
+          <img
+            onclick="show('image/vang.png')"
+            style="border-bottom-right-radius: 15px; height: 200px"
+            src="image/vang.png"
+          />
+        </div>
+      </div>
+      <div class="product-details">
+        <h1>Apple iPhone 14 Pro Max 128GB</h1>
+        <div class="product-rate">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <span class="zero"> (999) </span>
+        </div>
+        <div class="price">
+          <span class="new-price">31.590.000 đ</span>
+          <span class="old-price">35.990.000 đ</span>
+          <span class="discount">5% giảm</span>
+        </div>
+        <div class="product-description">
+          <p style="font-size: 18px">
+            <b style="font-size: 30px; color: #40739e">Đặc điểm nổi bật</b>
+            <br />
+            - Màn hình Dynamic Island - Sự biến mất của màn hình tai thỏ thay
+            thế bằng thiết kế viên thuốc, OLED 6,7 inch, hỗ trợ always-on
+            display. <br />
+            - Cấu hình iPhone 14 Pro Max mạnh mẽ, hiệu năng cực khủng từ chipset
+            A16 Bionic. <br />
+            - Làm chủ công nghệ nhiếp ảnh - Camera sau 48MP, cảm biến TOF sống
+            động. <br />
+            - Pin liền lithium-ion kết hợp cùng công nghệ sạc nhanh cải tiến.
+            <br />
+            <b style="font-size: 30px; color: #40739e">Trải nghiệm sử dụng</b>
+            <br />
+            - CPU mạnh mẽ, cho bạn tốc độ xử lí nhanh hơn. <br />
+            - Màn hình lớn đi kèm tấm nền chất lượng tốt, đem lại khả năng hiển
+            thị sắc nét và màu sắc hài hòa. <br />
+            - Hệ thống camera 48MP mới cho bạn những bức ảnh có chi tiết cực kỳ
+            tốt, đi kèm với đó là chế độ chụp ban đêm (Night Mode) - giúp bạn
+            chụp trong điều kiện thiếu sáng nhưng vẫn cho ra bức ảnh chất lượng
+            - được xử lí bằng thuật toán và AI. <br />
+            - Thời lượng pin tốt hơn 30% so với iPhone 13 Series, sử dụng cả
+            ngày mà không cần phải cắm sạc.
+          </p>
+        </div>
+        <div class="add-to-cart">
+          <a href="test/cart.html" target="_self"
+            ><button onclick="add_Cart()">Thêm vào giỏ</button></a
+          >
+          <a href="cart-main.html" target="page"
+            ><button id="buy-now">Mua ngay</button></a
+          >
+        </div>
+      </div>
+    </div>
+    <script>
+      // get
+      if (JSON.parse(localStorage.getItem("cart")) == null) {
+        var cart = [];
+      } else {
+        var cart = JSON.parse(localStorage.getItem("cart"));
+      }
+
+      if (JSON.parse(localStorage.getItem("index_Details_Product")) == null) {
+        var index_Details_Product = [];
+      } else {
+        var index_Details_Product = JSON.parse(
+          localStorage.getItem("index_Details_Product")
+        );
+      }
+      // remove localStorage.getItem "details"
+      function add_Cart() {
+        cart.push(index_Details_Product);
+        localStorage.removeItem("index_Details_Product");
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+    </script>
+  </body>
+</html>

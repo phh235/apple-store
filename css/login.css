@@ -1,0 +1,335 @@
+/*=============== GOOGLE FONTS ===============*/
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"); */
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(244, 75%, 57%);
+  --second-color: hsl(249, 64%, 47%);
+  --title-color: hsl(244, 12%, 12%);
+  --text-color: hsl(244, 4%, 36%);
+  --body-color: hsl(208, 97%, 85%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  /* --body-font: "Poppins", sans-serif; */
+  --h2-font-size: 1.25rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+
+
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: url(/fonts/Gilroy.woff2);
+  }
+  @font-face {
+    font-family: 'Gilroy';
+    src: url(/fonts/Gilroy-Medium.woff2);
+  }
+  @font-face {
+    font-family: 'Gilroy';
+    src: url(/fonts/Gilroy-Semibold.woff2);
+  }
+
+body {
+  background: linear-gradient(450deg, #2098b9, #74b9ff, #82ccdd);
+  font-family: var(--body-font);
+  font-family: "Gilroy", sans-serif;
+  color: var(--text-color);
+}
+
+input{
+  font-family: var(--body-font);
+  border: none;
+  outline: none;
+}
+
+a{
+    font-family: var(--body-font);
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== LOGIN FORM ===============*/
+.login__content,
+.login__form,
+.login__inputs {
+    display: grid;
+}
+
+.container {
+    background-image: url('/image/iPhone\ 14\ Pro\ Mockup\ 8.png');
+    background-size: cover;
+}
+
+.login__content {
+    position: relative;
+    height: 100vh;
+    align-items: center;
+}
+
+.login__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.login__form {
+    position: relative;
+    background-color: hsla(244, 16%, 92%, .6);
+    /* border: 2px solid hsla(244, 16%, 92%, .75); */
+    /* margin-inline: 1.5rem; */
+    row-gap: 1.25rem;
+    backdrop-filter: blur(2px); 
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.login__title {
+    color: black;
+    font-family: 'Gilroy';
+    font-size: 32px;
+    margin-bottom: .5rem;
+}
+
+.login__forgot {
+    text-decoration: none;
+    font-family: 'Gilroy';
+    font-size: 20px;
+    color: black;
+}
+
+.login__forgot:hover {
+    text-decoration: underline;
+}
+
+
+.login__input {
+    width: 100%;
+    padding: 14px 12px;
+    border-radius: 6px;
+    border: 2px solid var(--text-color);
+    background-color: hsla(244, 16%, 92%, .6);
+    color: black;
+    font-size: 17px;
+    font-weight: var(--font-medium);
+    transition: border .4s;
+}
+
+
+.login__button {
+    width: 50%;
+    padding: 14px 30px;
+    border-radius: 15px;
+    /* background: #3d3d3d; */
+    background: transparent;
+    color: black;
+    font-size: 24px;
+    font-family: 'Gilroy';
+    /* font-weight: var(--font-semi-bold); */
+    /* box-shadow: 0 6px 24px hsla(244, 75%, 48%, .5); */
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.login__button:hover {
+    /* box-shadow: 0 0 0 3px #3d3d3d; */
+    color: #fff;
+    background-color: #3d3d3d;
+}
+
+.login__buttonss:hover {
+    background-color: #3d3d3d;
+    /* box-shadow: 0 0 0 3px #079992; */
+    color: #fff;
+}
+
+.login__buttonss {
+    transition: .3s;
+    width: 130%;
+    padding: 19px 50px;
+    border-radius: 15px;
+    background: #2098b9;
+    color: #fff;
+    font-size: 17px;
+    font-weight: var(--font-semi-bold);
+    /* box-shadow: 0 6px 24px hsla(244, 75%, 48%, .5); */
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.login__button-ghost {
+    /* background: hsla(244, 16%, 92%, .6); */
+    background-color: #3d3d3d;
+    border: 2px solid #3d3d3d;
+    color: #fff;
+    box-shadow: none;
+}
+
+.login__check {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 1em;
+    font-size: 17px;
+    color: black;
+    font-family: 'Gilroy';
+}
+
+
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 360px) {
+    .login__buttons {
+        flex-direction: column;
+    }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+    .login__form {
+        width: 450px;
+        justify-self: center;
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 1064px) {
+    .container {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+    .login__content {
+        width: 1024px;
+        height: 600px;
+    }
+    .login__img {
+        /* border-radius: 3.5rem; */
+        box-shadow: 0 24px 48px hsla(244, 75%, 36%, .45);
+    }
+    .login__form {
+        justify-self: flex-end;
+        margin-right: 4.5rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .login__content {
+        height: 700px;
+    }
+    .login__form {
+        row-gap: 2rem;
+        padding: 3rem;
+        border-radius: 1.25rem;
+        border: 2.5px solid hsla(244, 16%, 92%, .75);
+    }
+    .login__description,
+    .login_label,
+    .login__button {
+        font-size: 20px;
+        color: black;
+    }
+    .login_inputs {
+        row-gap: 1.25rem;
+        margin-bottom: .75rem;
+        /* margin-bottom: 20px; */
+    }
+    .login_input {
+        border: 2.5px solid var(--text-color);
+        padding: 1rem;
+        font-size: var(--smaller-font-size);
+    }
+    .login__input:focus,
+    .login_input:valid {
+        /* border: 2.3px solid var(--first-color); */
+        transition: .1s;
+    }
+}
+
+
+/* Normal Usage */
+.spinner:before {
+    transform: rotateX(60deg) rotateY(45deg) rotateZ(45deg);
+    animation: 750ms rotateBefore infinite linear reverse;
+  }
+  
+  .spinner:after {
+    transform: rotateX(240deg) rotateY(45deg) rotateZ(45deg);
+    animation: 750ms rotateAfter infinite linear;
+  }
+  
+  .spinner:before,
+  .spinner:after {
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    position: absolute;
+    margin-top: -5em;
+    margin-left: -5em;
+    width: 10em;
+    height: 10em;
+    transform-style: preserve-3d;
+    transform-origin: 50%;
+    transform: rotateY(50%);
+    perspective-origin: 50% 50%;
+    perspective: 340px;
+    background-size: 10em 10em;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2NnB4IiBoZWlnaHQ9IjI5N3B4IiB2aWV3Qm94PSIwIDAgMjY2IDI5NyIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+CiAgICA8dGl0bGU+c3Bpbm5lcjwvdGl0bGU+CiAgICA8ZGVzY3JpcHRpb24+Q3JlYXRlZCB3aXRoIFNrZXRjaCAoaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoKTwvZGVzY3JpcHRpb24+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8cGF0aCBkPSJNMTcxLjUwNzgxMywzLjI1MDAwMDM4IEMyMjYuMjA4MTgzLDEyLjg1NzcxMTEgMjk3LjExMjcyMiw3MS40OTEyODIzIDI1MC44OTU1OTksMTA4LjQxMDE1NSBDMjE2LjU4MjAyNCwxMzUuODIwMzEgMTg2LjUyODQwNSw5Ny4wNjI0OTY0IDE1Ni44MDA3NzQsODUuNzczNDM0NiBDMTI3LjA3MzE0Myw3NC40ODQzNzIxIDc2Ljg4ODQ2MzIsODQuMjE2MTQ2MiA2MC4xMjg5MDY1LDEwOC40MTAxNTMgQy0xNS45ODA0Njg1LDIxOC4yODEyNDcgMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IDE0NS4yNzczNDQsMjk2LjY2Nzk2OCBDMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IC0yNS40NDkyMTg3LDI1Ny4yNDIxOTggMy4zOTg0Mzc1LDEwOC40MTAxNTUgQzE2LjMwNzA2NjEsNDEuODExNDE3NCA4NC43Mjc1ODI5LC0xMS45OTIyOTg1IDE3MS41MDc4MTMsMy4yNTAwMDAzOCBaIiBpZD0iUGF0aC0xIiBmaWxsPSIjMDAwMDAwIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==);
+  }
+  /* sitNSpin.less */
+  @keyframes rotateBefore {
+    from {
+      transform: rotateX(60deg) rotateY(45deg) rotateZ(0deg);
+    }
+  
+    to {
+      transform: rotateX(60deg) rotateY(45deg) rotateZ(-360deg);
+    }
+  }
+  
+  @keyframes rotateAfter {
+    from {
+      transform: rotateX(240deg) rotateY(45deg) rotateZ(0deg);
+    }
+  
+    to {
+      transform: rotateX(240deg) rotateY(45deg) rotateZ(360deg);
+    }
+  }
+  #loading {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

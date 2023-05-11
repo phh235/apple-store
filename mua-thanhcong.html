@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán</title>
+    <link rel="stylesheet" href="css/mua-thanhcong.css">
+    <script>
+        // Tạo biến cho phần tử loading
+        var loading = document.getElementById("loading");
+        // Chờ 4 giây
+        setTimeout(function () {
+            // Ẩn phần loading
+            document.getElementById("loading").style.display = "none";
+        }, 1800);
+        // Hiển thị phần tử loading khi trang web đang tải
+        window.addEventListener("load", function () {
+            loading.style.display = "none";
+        });
+
+        // Hiển thị phần tử loading khi gửi yêu cầu Ajax
+        xhr.addEventListener("loadstart", function () {
+            loading.style.display = "flex";
+        });
+
+        // Ẩn phần tử loading khi nhận được phản hồi Ajax
+        xhr.addEventListener("loadend", function () {
+            loading.style.display = "none";
+        });
+    </script>
+</head>
+<body>
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+    <div id="container">
+        <header>
+
+        </header>
+        <nav>
+            <div class="img">
+                <img src="image/Flat_tick_icon.svg.png" alt="">
+            </div>
+            <div class="text">
+                <h3>Đặt hàng thành công!</h3>
+            </div>
+            <div class="thanks">
+                <h3>
+                    Cảm ơn quí khách đã mua hàng, đơn hàng sẽ được giao trong vòng 2 ngày tới.
+                </h3>
+            </div>
+            <div class="action">
+                <a target="_self" href="main-course.html"> <button>Mua hàng tiếp</button></a>
+              </div>
+        </nav>
+    </div>
+</body>
+</html>
